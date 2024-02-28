@@ -1,0 +1,6 @@
+names:
+  0: mylabel
+path: ../dataset/
+test: images/val
+train: images/train
+val: images/val
