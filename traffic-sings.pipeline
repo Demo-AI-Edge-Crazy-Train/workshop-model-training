@@ -20,7 +20,7 @@
               "dependencies": [],
               "include_subdirectories": false,
               "outputs": [
-                "dataset"
+                "dataset.tar.gz"
               ],
               "env_vars": [],
               "kubernetes_pod_annotations": [],
@@ -34,7 +34,7 @@
             "label": "",
             "ui_data": {
               "label": "labeling-extraction.ipynb",
-              "image": "/notebook/traffic-signs/myworkbench/static/elyra/notebook.svg",
+              "image": "/notebook/traffic-sign-detection/fine-tune/static/elyra/notebook.svg",
               "x_pos": 137,
               "y_pos": 257,
               "description": "Run notebook file"
@@ -78,10 +78,12 @@
               "pipeline_parameters": [
                 "label_name"
               ],
-              "dependencies": [],
-              "include_subdirectories": false,
+              "dependencies": [
+                "utils/*"
+              ],
+              "include_subdirectories": true,
               "outputs": [
-                "dataset"
+                "dataset-full.tar.gz"
               ],
               "env_vars": [],
               "kubernetes_pod_annotations": [],
@@ -95,7 +97,7 @@
             "label": "",
             "ui_data": {
               "label": "synthetic-data.ipynb",
-              "image": "/notebook/traffic-signs/myworkbench/static/elyra/notebook.svg",
+              "image": "/notebook/traffic-sign-detection/fine-tune/static/elyra/notebook.svg",
               "x_pos": 386,
               "y_pos": 312,
               "description": "Run notebook file"
@@ -144,7 +146,9 @@
           "app_data": {
             "component_parameters": {
               "pipeline_parameters": [],
-              "dependencies": [],
+              "dependencies": [
+                "utils/*"
+              ],
               "include_subdirectories": false,
               "outputs": [],
               "env_vars": [],
@@ -159,7 +163,7 @@
             "label": "",
             "ui_data": {
               "label": "fine-tuning.ipynb",
-              "image": "/notebook/traffic-signs/myworkbench/static/elyra/notebook.svg",
+              "image": "/notebook/traffic-sign-detection/fine-tune/static/elyra/notebook.svg",
               "x_pos": 605,
               "y_pos": 365,
               "description": "Run notebook file"
@@ -212,34 +216,34 @@
           "name": "traffic-sings",
           "runtime": "Data Science Pipelines",
           "pipeline_defaults": {
+            "kubernetes_pod_annotations": [],
+            "kubernetes_tolerations": [],
             "kubernetes_pod_labels": [],
             "mounted_volumes": [],
-            "kubernetes_tolerations": [],
-            "kubernetes_pod_annotations": [],
             "kubernetes_shared_mem_size": {},
+            "env_vars": [],
             "kubernetes_secrets": [
               {
                 "env_var": "AWS_ACCESS_KEY_ID",
-                "name": "aws-connection-pipeline",
+                "name": "aws-connection-pipelines",
                 "key": "AWS_ACCESS_KEY_ID"
               },
               {
                 "env_var": "AWS_SECRET_ACCESS_KEY",
-                "name": "aws-connection-pipeline",
+                "name": "aws-connection-pipelines",
                 "key": "AWS_SECRET_ACCESS_KEY"
               },
               {
                 "env_var": "AWS_S3_ENDPOINT",
-                "name": "aws-connection-pipeline",
+                "name": "aws-connection-pipelines",
                 "key": "AWS_S3_ENDPOINT"
               },
               {
                 "env_var": "AWS_S3_BUCKET",
-                "name": "aws-connection-pipeline",
+                "name": "aws-connection-pipelines",
                 "key": "AWS_S3_BUCKET"
               }
             ],
-            "env_vars": [],
             "runtime_image": "quay.io/modh/runtime-images@sha256:58d45c4313097ccc4a8f2c81b30a5861cb51f0aa468a3bb66c5bb1ef16526c6b"
           },
           "pipeline_parameters": [
