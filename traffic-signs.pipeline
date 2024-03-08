@@ -94,8 +94,8 @@
             "ui_data": {
               "label": "synthetic-data.ipynb",
               "image": "/notebook/traffic-sign-detection/fine-tune/static/elyra/notebook.svg",
-              "x_pos": 386,
-              "y_pos": 312,
+              "x_pos": 370,
+              "y_pos": 326,
               "description": "Run notebook file"
             }
           },
@@ -163,8 +163,8 @@
             "ui_data": {
               "label": "fine-tuning.ipynb",
               "image": "/notebook/traffic-sign-detection/fine-tune/static/elyra/notebook.svg",
-              "x_pos": 605,
-              "y_pos": 365,
+              "x_pos": 628,
+              "y_pos": 371,
               "description": "Run notebook file"
             }
           },
@@ -212,14 +212,14 @@
         "version": 8,
         "runtime_type": "KUBEFLOW_PIPELINES",
         "properties": {
-          "name": "traffic-sings",
+          "name": "traffic-signs",
           "runtime": "Data Science Pipelines",
           "pipeline_defaults": {
-            "kubernetes_tolerations": [],
+            "kubernetes_shared_mem_size": {},
             "kubernetes_pod_annotations": [],
             "kubernetes_pod_labels": [],
             "mounted_volumes": [],
-            "kubernetes_shared_mem_size": {},
+            "kubernetes_tolerations": [],
             "env_vars": [],
             "kubernetes_secrets": [
               {
@@ -243,7 +243,7 @@
                 "key": "AWS_S3_BUCKET"
               }
             ],
-            "runtime_image": "quay.io/modh/runtime-images@sha256:58d45c4313097ccc4a8f2c81b30a5861cb51f0aa468a3bb66c5bb1ef16526c6b"
+            "runtime_image": "quay.io/demo-ai-edge-crazy-train/activity-pipeline-runtime:v1"
           },
           "pipeline_parameters": [
             {
