@@ -15,7 +15,9 @@
           "app_data": {
             "component_parameters": {
               "pipeline_parameters": [],
-              "dependencies": [],
+              "dependencies": [
+                "utils/*"
+              ],
               "include_subdirectories": false,
               "outputs": [
                 "dataset.tar.gz"
@@ -94,8 +96,8 @@
             "ui_data": {
               "label": "synthetic-data.ipynb",
               "image": "/notebook/traffic-sign-detection/fine-tune/static/elyra/notebook.svg",
-              "x_pos": 370,
-              "y_pos": 326,
+              "x_pos": 383,
+              "y_pos": 329,
               "description": "Run notebook file"
             }
           },
@@ -136,13 +138,12 @@
           ]
         },
         {
-          "id": "020927d1-9ec1-423d-bc46-59b0949df15c",
+          "id": "3018798c-0f86-4006-a7f2-07c42a6a5cb8",
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
             "component_parameters": {
               "pipeline_parameters": [
-                "label_name",
                 "epochs"
               ],
               "dependencies": [
@@ -157,14 +158,14 @@
               "kubernetes_shared_mem_size": {},
               "kubernetes_tolerations": [],
               "mounted_volumes": [],
-              "filename": "fine-tuning.ipynb"
+              "filename": "transfer-learning.ipynb"
             },
             "label": "",
             "ui_data": {
-              "label": "fine-tuning.ipynb",
+              "label": "transfer-learning.ipynb",
               "image": "/notebook/traffic-sign-detection/fine-tune/static/elyra/notebook.svg",
-              "x_pos": 628,
-              "y_pos": 371,
+              "x_pos": 657,
+              "y_pos": 373,
               "description": "Run notebook file"
             }
           },
@@ -182,7 +183,7 @@
               },
               "links": [
                 {
-                  "id": "7401916d-c18c-4fb8-b1a8-3b4def3a7906",
+                  "id": "0ea5a48a-0d46-4324-815c-d2960f14978a",
                   "node_id_ref": "4b00a70d-c0a6-4526-a4e7-be231283054f",
                   "port_id_ref": "outPort"
                 }
@@ -215,11 +216,11 @@
           "name": "traffic-signs",
           "runtime": "Data Science Pipelines",
           "pipeline_defaults": {
+            "kubernetes_pod_labels": [],
+            "kubernetes_tolerations": [],
             "kubernetes_shared_mem_size": {},
             "kubernetes_pod_annotations": [],
-            "kubernetes_pod_labels": [],
             "mounted_volumes": [],
-            "kubernetes_tolerations": [],
             "env_vars": [],
             "kubernetes_secrets": [
               {
@@ -246,15 +247,6 @@
             "runtime_image": "quay.io/demo-ai-edge-crazy-train/activity-pipeline-runtime:v1"
           },
           "pipeline_parameters": [
-            {
-              "name": "label_name",
-              "description": "",
-              "default_value": {
-                "type": "String",
-                "value": "LABEL_NAME"
-              },
-              "required": false
-            },
             {
               "name": "epochs",
               "description": "",

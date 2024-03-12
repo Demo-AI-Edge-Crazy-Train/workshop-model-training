@@ -1,9 +1,16 @@
 {
-  "SpeedLimit_30": {"path": "images/30-fit.png", "bbox_w": "161", "bbox_h": "157"},
-  "SpeedLimit_50": {"path": "images/50-fit.png", "bbox_w": "151", "bbox_h": "151"},
-  "TrafficSignalsAhead": {"path": "images/lights-fit.png", "bbox_w": "139", "bbox_h": "131"},
-  "PedestiranCrossingAhead": {"path": "images/pedestrian-fit.png", "bbox_w": "134", "bbox_h": "125"},
-  "BewareChildren": {"path": "images/children-fit.png", "bbox_w": "128", "bbox_h": "125"},
-  "RedTrafficLight": {"path": "images/red-fit.png", "bbox_w": "105", "bbox_h": "210"},
-  "GreenTrafficLight": {"path": "images/green-fit.png", "bbox_w": "116", "bbox_h": "225"}
+    "SpeedLimit": {
+        "label_id": 0,
+        "children": {
+            "SpeedLimit_30": {"path": "images/30-lego.png", "bbox_w": "247", "bbox_h": "247"},
+            "SpeedLimit_50": {"path": "images/50-lego.png", "bbox_w": "236", "bbox_h": "553"}
+        }
+    },
+    "DangerAhead": {
+        "label_id": 1,
+        "children": {
+            "BewareChildren": {"path": "images/children-lego.png", "bbox_w": "359", "bbox_h": "330"},
+            "Workers": {"path": "images/worker-lego.png", "bbox_w": "356", "bbox_h": "316"}
+        }
+    }
 }
