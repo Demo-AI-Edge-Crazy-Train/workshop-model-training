@@ -34,7 +34,7 @@
             "label": "",
             "ui_data": {
               "label": "labeling-extraction.ipynb",
-              "image": "/notebook/traffic-sign-detection/fine-tune/static/elyra/notebook.svg",
+              "image": "/notebook/traffic-sign-detection/transfer-learning/static/elyra/notebook.svg",
               "x_pos": 137,
               "y_pos": 257,
               "description": "Run notebook file"
@@ -95,9 +95,9 @@
             "label": "",
             "ui_data": {
               "label": "synthetic-data.ipynb",
-              "image": "/notebook/traffic-sign-detection/fine-tune/static/elyra/notebook.svg",
-              "x_pos": 383,
-              "y_pos": 329,
+              "image": "/notebook/traffic-sign-detection/transfer-learning/static/elyra/notebook.svg",
+              "x_pos": 523,
+              "y_pos": 257,
               "description": "Run notebook file"
             }
           },
@@ -163,9 +163,9 @@
             "label": "",
             "ui_data": {
               "label": "transfer-learning.ipynb",
-              "image": "/notebook/traffic-sign-detection/fine-tune/static/elyra/notebook.svg",
-              "x_pos": 657,
-              "y_pos": 373,
+              "image": "/notebook/traffic-sign-detection/transfer-learning/static/elyra/notebook.svg",
+              "x_pos": 857,
+              "y_pos": 288,
               "description": "Run notebook file"
             }
           },
@@ -204,6 +204,84 @@
               }
             }
           ]
+        },
+        {
+          "id": "e6dfa2a2-ddda-455c-aaf4-fe54d2800f06",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "component_parameters": {
+              "dependencies": [
+                "utils/*"
+              ],
+              "include_subdirectories": false,
+              "outputs": [],
+              "env_vars": [
+                {
+                  "env_var": "AWS_ACCESS_KEY_ID"
+                },
+                {
+                  "env_var": "AWS_SECRET_ACCESS_KEY"
+                },
+                {
+                  "env_var": "AWS_S3_BUCKET"
+                },
+                {
+                  "env_var": "AWS_S3_ENDPOINT"
+                }
+              ],
+              "kubernetes_pod_annotations": [],
+              "kubernetes_pod_labels": [],
+              "kubernetes_secrets": [],
+              "kubernetes_shared_mem_size": {},
+              "kubernetes_tolerations": [],
+              "mounted_volumes": [],
+              "filename": "comparaison.ipynb"
+            },
+            "label": "",
+            "ui_data": {
+              "label": "comparaison.ipynb",
+              "image": "/notebook/traffic-sign-detection/transfer-learning/static/elyra/notebook.svg",
+              "x_pos": 1326,
+              "y_pos": 381,
+              "description": "Run notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Input Port"
+                }
+              },
+              "links": [
+                {
+                  "id": "5964fa38-dd76-44e1-8249-a13f58b9fe02",
+                  "node_id_ref": "3018798c-0f86-4006-a7f2-07c42a6a5cb8",
+                  "port_id_ref": "outPort"
+                }
+              ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
         }
       ],
       "app_data": {
@@ -217,11 +295,10 @@
           "runtime": "Data Science Pipelines",
           "pipeline_defaults": {
             "kubernetes_pod_labels": [],
-            "kubernetes_tolerations": [],
-            "kubernetes_shared_mem_size": {},
-            "kubernetes_pod_annotations": [],
             "mounted_volumes": [],
-            "env_vars": [],
+            "kubernetes_tolerations": [],
+            "kubernetes_pod_annotations": [],
+            "kubernetes_shared_mem_size": {},
             "kubernetes_secrets": [
               {
                 "env_var": "AWS_ACCESS_KEY_ID",
@@ -244,6 +321,7 @@
                 "key": "AWS_S3_BUCKET"
               }
             ],
+            "env_vars": [],
             "runtime_image": "quay.io/demo-ai-edge-crazy-train/activity-pipeline-runtime:v1"
           },
           "pipeline_parameters": [
