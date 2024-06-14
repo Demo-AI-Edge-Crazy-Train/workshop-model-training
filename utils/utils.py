@@ -14,7 +14,7 @@ def degrad_sign(img, ratio, alpha_channel):
     hsv = np.array(hsv, dtype = np.uint8)
     img = cv2.cvtColor(hsv, cv2.COLOR_HSV2BGR)
     img = cv2.cvtColor(img,cv2.COLOR_BGR2BGRA)
-    random_blur = random.randint(1,5)
+    random_blur = random.randint(1,3)
     img = cv2.blur(img,(random_blur,random_blur))
     #img[:, :, 3] = alpha_channel
     return img
@@ -139,5 +139,5 @@ def determine_split(i, nb_data):
     if nb_data < 5:
         split = "train"
     else:
-        split = "train" if i / nb_data <= 0.8 else "val"
+        split = "train" if i / nb_data < 0.8 else "val"
     return split
