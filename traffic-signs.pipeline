@@ -180,7 +180,8 @@
               ],
               "filename": "transfer-learning.ipynb",
               "memory": 4,
-              "memory_limit": 8
+              "memory_limit": 8,
+              "gpu": 1
             },
             "label": "",
             "ui_data": {
@@ -282,7 +283,14 @@
                   },
                   "label": "Input Port"
                 }
-              }
+              },
+              "links": [
+                {
+                  "id": "bdfdb502-c986-4cda-83e0-5aee51c05dbd",
+                  "node_id_ref": "3018798c-0f86-4006-a7f2-07c42a6a5cb8",
+                  "port_id_ref": "outPort"
+                }
+              ]
             }
           ],
           "outputs": [
