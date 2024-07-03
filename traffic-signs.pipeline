@@ -164,13 +164,7 @@
               "kubernetes_pod_labels": [],
               "kubernetes_secrets": [],
               "kubernetes_shared_mem_size": {},
-              "kubernetes_tolerations": [
-                {
-                  "key": "nvidia.com/gpu",
-                  "operator": "Exists",
-                  "effect": "NoSchedule"
-                }
-              ],
+              "kubernetes_tolerations": [],
               "mounted_volumes": [
                 {
                   "path": "/dev/shm",
